@@ -1,16 +1,22 @@
 [package]
 name = "stellar_nexus"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
+authors = ["StellarNexus Contributors"]
+license = "MIT"
+description = "Programmable inheritance vault on Stellar Soroban"
+repository = "https://github.com/your-org/StellarNexus"
 
 [lib]
 crate-type = ["cdylib"]
 
 [dependencies]
 soroban-sdk = { version = "21.0.0", features = ["alloc"] }
+soroban-token-sdk = "21.0.0"
 
 [dev-dependencies]
 soroban-sdk = { version = "21.0.0", features = ["testutils"] }
+soroban-token-sdk = { version = "21.0.0", features = ["testutils"] }
 
 [profile.release]
 opt-level = "z"

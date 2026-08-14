@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_NETWORK=testnet
+      - VITE_RPC_URL=https://soroban-testnet.stellar.org
+      - VITE_CONTRACT_ID=${CONTRACT_ID}
+    restart: unless-stopped
+    networks:
+      - stellarnexus
+
+networks:
+  stellarnexus:
+    driver: bridge
